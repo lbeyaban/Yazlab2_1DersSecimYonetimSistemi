@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6CC0E11F-613D-4F9C-912A-B04FAC1F435D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>YazLab1_1</RootNamespace>
+    <AssemblyName>YazLab1_1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework6.Npgsql, Version=6.4.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework6.Npgsql.6.4.3\lib\net461\EntityFramework6.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.1.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.1.3\lib\net461\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.32.3057.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.32.3057.0\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.3\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDersPaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDersPaneli.Designer.cs">
+      <DependentUpon>AdminDersPaneli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGirisEkranı.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGirisEkranı.Designer.cs">
+      <DependentUpon>AdminGirisEkranı.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminIlgıAlaniPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminIlgıAlaniPanel.Designer.cs">
+      <DependentUpon>AdminIlgıAlaniPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPaneli.Designer.cs">
+      <DependentUpon>AdminPaneli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminTalepGecmisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminTalepGecmisi.Designer.cs">
+      <DependentUpon>AdminTalepGecmisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CheckedListItems.cs" />
+    <Compile Include="Context.cs" />
+    <Compile Include="DersEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DersEkleme.Designer.cs">
+      <DependentUpon>DersEkleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dersler.cs" />
+    <Compile Include="DersTalepleri.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GelenKutusuPaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GelenKutusuPaneli.Designer.cs">
+      <DependentUpon>GelenKutusuPaneli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenelAyarlar.cs" />
+    <Compile Include="GenelAyarMenusu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenelAyarMenusu.Designer.cs">
+      <DependentUpon>GenelAyarMenusu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeriSayim.cs" />
+    <Compile Include="HocaAnaPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HocaAnaPanel.Designer.cs">
+      <DependentUpon>HocaAnaPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HocaGirisEkranı.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HocaGirisEkranı.Designer.cs">
+      <DependentUpon>HocaGirisEkranı.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HocaIlgıAlanıEklemePaneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HocaIlgıAlanıEklemePaneli.Designer.cs">
+      <DependentUpon>HocaIlgıAlanıEklemePaneli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HocaKriterDersEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HocaKriterDersEkleme.Designer.cs">
+      <DependentUpon>HocaKriterDersEkleme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HocaZorunluDersSecme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HocaZorunluDersSecme.Designer.cs">
+      <DependentUpon>HocaZorunluDersSecme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IlgiAlaniOgretmen.cs" />
+    <Compile Include="IlgiAlanlari.cs" />
+    <Compile Include="IlgiAlanlarıOgrenci.cs" />
+    <Compile Include="KriterDersListesi.cs" />
+    <Compile Include="KriterListeleme.cs" />
+    <Compile Include="Mesajlasma.cs" />
+    <Compile Include="Migrations\202311041212347_Yazlab.cs" />
+    <Compile Include="Migrations\202311041212347_Yazlab.designer.cs">
+      <DependentUpon>202311041212347_Yazlab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Ogrenci.cs" />
+    <Compile Include="AdminOgrenciPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminOgrenciPanel.Designer.cs">
+      <DependentUpon>AdminOgrenciPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciAnaPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciAnaPanel.Designer.cs">
+      <DependentUpon>OgrenciAnaPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciDers.cs" />
+    <Compile Include="OgrenciDersSecimEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciDersSecimEkrani.Designer.cs">
+      <DependentUpon>OgrenciDersSecimEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciEkstraTalep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciEkstraTalep.Designer.cs">
+      <DependentUpon>OgrenciEkstraTalep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciGirisEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciGirisEkrani.Designer.cs">
+      <DependentUpon>OgrenciGirisEkrani.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgrenciHocaListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrenciHocaListele.Designer.cs">
+      <DependentUpon>OgrenciHocaListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ogretmen.cs" />
+    <Compile Include="AdminOgretmenPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminOgretmenPanel.Designer.cs">
+      <DependentUpon>AdminOgretmenPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OgretmenDers.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transcript.cs" />
+    <Compile Include="Yonetici.cs" />
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDersPaneli.resx">
+      <DependentUpon>AdminDersPaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGirisEkranı.resx">
+      <DependentUpon>AdminGirisEkranı.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminIlgıAlaniPanel.resx">
+      <DependentUpon>AdminIlgıAlaniPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPaneli.resx">
+      <DependentUpon>AdminPaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminTalepGecmisi.resx">
+      <DependentUpon>AdminTalepGecmisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DersEkleme.resx">
+      <DependentUpon>DersEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminOgrenciPanel.resx">
+      <DependentUpon>AdminOgrenciPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminOgretmenPanel.resx">
+      <DependentUpon>AdminOgretmenPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GelenKutusuPaneli.resx">
+      <DependentUpon>GelenKutusuPaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenelAyarMenusu.resx">
+      <DependentUpon>GenelAyarMenusu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HocaAnaPanel.resx">
+      <DependentUpon>HocaAnaPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HocaGirisEkranı.resx">
+      <DependentUpon>HocaGirisEkranı.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HocaIlgıAlanıEklemePaneli.resx">
+      <DependentUpon>HocaIlgıAlanıEklemePaneli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HocaKriterDersEkleme.resx">
+      <DependentUpon>HocaKriterDersEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HocaZorunluDersSecme.resx">
+      <DependentUpon>HocaZorunluDersSecme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311041212347_Yazlab.resx">
+      <DependentUpon>202311041212347_Yazlab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciAnaPanel.resx">
+      <DependentUpon>OgrenciAnaPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciDersSecimEkrani.resx">
+      <DependentUpon>OgrenciDersSecimEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciEkstraTalep.resx">
+      <DependentUpon>OgrenciEkstraTalep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciGirisEkrani.resx">
+      <DependentUpon>OgrenciGirisEkrani.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrenciHocaListele.resx">
+      <DependentUpon>OgrenciHocaListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>
